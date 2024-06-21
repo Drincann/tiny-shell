@@ -5,7 +5,7 @@ A tiny shell implementation in cpp.
 ## Build
 
 ```bash
-$ mkdir build && cd build && cmake .. && cmake --build . && cd ..
+$ mkdir -p build && cd build && cmake .. && cmake --build . && cd ..
 ```
 
 ## Run
