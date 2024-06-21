@@ -34,4 +34,4 @@ public:
 extern std::unordered_map<std::string, Command *> commands;
 
 // declare commands initializer
-void initializeCommands();
+void initBuiltins();

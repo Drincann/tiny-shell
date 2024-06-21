@@ -7,7 +7,7 @@
 // impl commands container
 std::unordered_map<std::string, Command *> commands;
 
-void initializeCommands() {
+void initBuiltins() {
   commands["echo"] =
       Command::createCommand("echo", CommandType::BUILTIN, sh::builtins::echo);
   commands["exit"] =
@@ -18,7 +18,7 @@ void initializeCommands() {
       Command::createCommand("pwd", CommandType::BUILTIN, sh::builtins::pwd);
 }
 
-// impl Command
+// impl UserCommand
 UserCommand *UserCommand::parseCommand(std::string input) {
   UserCommand *userCommand = new UserCommand();
 
@@ -29,6 +29,7 @@ UserCommand *UserCommand::parseCommand(std::string input) {
     return userCommand;
   }
 
+  // split command name and args
   size_t spaceIndex = input.find(" ");
   std::string name, args;
   if (spaceIndex == std::string::npos) {
@@ -52,7 +53,6 @@ UserCommand *UserCommand::parseCommand(std::string input) {
   return userCommand;
 }
 
-// impl UserCommand
 UserCommand::UserCommand() {}
 
 // impl Command

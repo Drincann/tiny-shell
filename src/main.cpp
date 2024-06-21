@@ -2,8 +2,6 @@
 
 #include <iostream>
 
-// built-in commands container
-
 void init();
 void loop();
 int main() {
@@ -16,24 +14,26 @@ void init() {
   std::cout << std::unitbuf;
   std::cerr << std::unitbuf;
 
-  initializeCommands();
+  initBuiltins();
 }
 
 void eval(std::string input);
 void loop() {
   std::cout << "$ ";
+  // L(oop)
   while (true) {
     std::string input;
 
-    // REP
+    // R(ead)
     std::getline(std::cin, input);
+    // E(valuate)
     eval(input);
+    // P(rint)
     std::cout << "$ ";
   }
 }
 
 void eval(std::string input) {
-  // std::cout << "[DEBUG] " << input << std::endl;
   UserCommand *command = UserCommand::parseCommand(input);
   command->command.func(command);
   delete command;
