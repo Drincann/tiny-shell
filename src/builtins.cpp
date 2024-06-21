@@ -1,6 +1,6 @@
-#include "builtins.hpp"
-#include "command.hpp"
-#include "utils.hpp"
+#include "headers/builtins.hpp"
+#include "headers/command.hpp"
+#include "headers/utils.hpp"
 
 #include <iostream>
 #include <unistd.h>

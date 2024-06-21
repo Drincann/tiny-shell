@@ -47,3 +47,7 @@ _deps
 
 build/
 vcpkg_installed
+
+.cache
+.DS_Store
+.vscode

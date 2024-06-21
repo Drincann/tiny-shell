@@ -1,5 +1,5 @@
-#include "command.hpp"
-#include "builtins.hpp"
+#include "headers/command.hpp"
+#include "headers/builtins.hpp"
 
 #include <cstdlib>
 #include <string>

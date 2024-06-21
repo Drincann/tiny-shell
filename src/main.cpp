@@ -1,4 +1,5 @@
-#include "command.hpp"
+#include "headers/command.hpp"
+
 #include <iostream>
 
 // built-in commands container
