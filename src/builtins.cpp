@@ -37,6 +37,15 @@ void type(UserCommand *input) {
   delete subInput;
 }
 
+void pwd(UserCommand *input) {
+  char cwd[1024];
+  if (getcwd(cwd, sizeof(cwd)) != NULL) {
+    std::cout << cwd << std::endl;
+  } else {
+    std::cout << "Error getting current working directory" << std::endl;
+  }
+}
+
 void run(UserCommand *input) {
   std::string fullPath = findExecutable(input->command.name);
 

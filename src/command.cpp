@@ -14,6 +14,8 @@ void initializeCommands() {
       Command::createCommand("exit", CommandType::BUILTIN, sh::builtins::exit);
   commands["type"] =
       Command::createCommand("type", CommandType::BUILTIN, sh::builtins::type);
+  commands["pwd"] =
+      Command::createCommand("pwd", CommandType::BUILTIN, sh::builtins::pwd);
 }
 
 // impl Command
