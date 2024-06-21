@@ -1,10 +1,9 @@
 #include "headers/utils.hpp"
 
-#include <string>
-#include <vector>
-#include <unistd.h>
 #include <stdexcept>
-
+#include <string>
+#include <unistd.h>
+#include <vector>
 
 std::vector<std::string> split(const std::string &str,
                                const std::string &delimiter) {
@@ -33,18 +32,12 @@ std::string findExecutable(const std::string &name) {
   char *path = getenv("PATH");
   std::vector<std::string> paths = split(std::string(path), ":");
 
-  bool found = false;
-  std::string fullPath;
   for (std::string p : paths) {
-    fullPath = p + "/" + name;
+    std::string fullPath = p + "/" + name;
     if (access(fullPath.c_str(), F_OK) == 0) {
-      found = true;
-      break;
+      return fullPath;
     }
   }
 
-  if (found) {
-    return fullPath;
-  }
   return "";
 }
