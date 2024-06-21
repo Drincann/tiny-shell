@@ -2,7 +2,6 @@
 #include "builtins.hpp"
 
 #include <cstdlib>
-#include <iostream>
 #include <string>
 
 // impl commands container
@@ -43,7 +42,7 @@ UserCommand *UserCommand::parseCommand(std::string input) {
   if (commands[name] == nullptr) {
     userCommand->command.name = name;
     userCommand->command.type = CommandType::EXTERNAL;
-    userCommand->command.func = sh::builtins::noImpl;
+    userCommand->command.func = sh::builtins::run;
   } else {
     userCommand->command = *commands[name];
   }

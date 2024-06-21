@@ -7,7 +7,7 @@ namespace builtins {
 void exit(UserCommand *args);
 void echo(UserCommand *args);
 void type(UserCommand *args);
-void noImpl(UserCommand *args);
+void run(UserCommand *args);
 void empty(UserCommand *args);
 } // namespace builtins
 
